@@ -11,21 +11,31 @@
 <script src="https://kit.fontawesome.com/7d2c71bd53.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="header">
-        <div class="container">
+</div>
+<div id="home">
+    <div class="container">
             <nav>
                 <img src="./images/Logo.png" alt="Logo" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">PortFolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">PortFolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-x" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
-            <div class="header-text">
-                <p>Software Engineer</p>
-                <h1>Heyy, I'm <span>Manish M Pillai </span><br>from India</h1>
+            <div class="header-row">
+                <div class="header-left">
+                    <div class="header-text">
+                        <p>Software Engineer</p>
+                        <h1>Heyy, I'm <span>Manish M Pillai </span><br>from India</h1>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <img src="./images/Manish-bg.png" alt="manish image">
+                </div>
             </div>
         </div>
     </div>
@@ -158,12 +168,13 @@
                     <a href="./docs/12305707 CV LPU.pdf" download class="btn btn2">DownLoad CV</a>
                 </div>
                 <div class="contact-right">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message" ></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -171,24 +182,8 @@
             <p>Made by Manish M Pillai</p>
         </div>
     </div>
-
-
-
-
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-    
+    <script src="./script/aboutMe.js"></script>
+    <script src="./script/sidemenu.js"></script>
+    <script src="./script/googlesheets.js"></script>  
 </body>
 </html>
